@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div>happy</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <div class="GameTitle">ROCK PAPERS SCISSORS</div>
+    <div class="OutputDiv">
+      <div class="Output you">
+        <div class="YouLabel">YOU</div>
+        <!-- <div>image</div> -->
+      </div>
+      <div class="vs">vs</div>
+      <div class="Output computer">
+        <div class="ComputerLabel">COMPUTER</div>
+        <!-- <div>image</div> -->
+      </div>
+    </div>
+    <div class="input">
+      CHOOSE ONE!
+      <div class="choice">
+        <button class="hand rock">
+          <img src="./imgs/rock.png" alt="" class="RockImg" />
+        </button>
+        <button class="hand paper">
+          <img src="./imgs/paper.png" alt="" />
+        </button>
+        <button class="hand scissors">
+          <img src="./imgs/scissors.png" alt="" />
+        </button>
+      </div>
+    </div>
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>
