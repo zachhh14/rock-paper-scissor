@@ -2,7 +2,7 @@
 
 html{
     background-color: #397367;
-    padding: 10% 20%;
+    padding: 5% 20%;
     font-family: 'Open Sans', sans-serif;
     color: #fff;
 }
@@ -10,15 +10,33 @@ html{
 .GameTitle{
     font-weight: 800;
     font-size: 38px;
-
     text-align: center;
+}
+
+.round{
+    text-align: center;
+    font-weight: 700;
+    font-size: 29px;
+}
+
+.scoreDiv{
+    display:flex;
+    justify-content: center;
+    margin-bottom: 14px;
+    height:61px;
+}
+
+.score{
+    height: 50px;
+    width: 50px;
+    margin: 5.5px;
 }
 
 .OutputDiv{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 38px;
+    /* margin-top: 10px; */
     margin-bottom: 25px;;
 }
 
@@ -41,6 +59,8 @@ html{
     margin: 0 5%;
     font-weight: 800;
     font-size: 38px;
+    position: relative;
+    top: 25px
 }
 
 .input{
