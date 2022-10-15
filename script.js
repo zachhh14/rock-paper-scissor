@@ -7,6 +7,11 @@ const outputComputer = document.querySelector(".computerImg");
 const yourScore = document.querySelector("#yourScore");
 const computerScore = document.querySelector("#computerScore");
 const roundgameCounter = document.querySelector(".round");
+const gamemenuModal = document.querySelector(".gameMenu");
+const gameOver = document.querySelector(".gameOver");
+const play = document.querySelector(".play");
+const ok = document.querySelector(".ok");
+const whoWins = document.querySelector("#gameOver")
 let yourPoints = 0;
 let computerPoints = 0;
 let playerSelection;
@@ -16,9 +21,50 @@ let yourCtr = 0;
 let computerCtr = 0;
 let roundCounter = 1;
 
+gameOver.style.display = "none";
+
+function reset() {
+  yourCtr = 0;
+  computerCtr = 0;
+  roundCounter = 1;
+  yourPoints = 0;
+  computerPoints = 0;
+  gamenotFinish=true;
+  playerSelection = "null"
+  computerSelection = "null"
+  gameRound()
+  outputPlayer.innerHTML = ""
+  outputComputer.innerHTML = ""
+  computerScore.innerHTML =""
+  yourScore.innerHTML =""
+
+}
+
+ok.addEventListener("click", () => {
+  gameOver.style.display = "none";
+  gamemenuModal.style.display = "block";
+  reset()
+});
+
+play.addEventListener("click", () => {
+  gamemenuModal.style.display = "none";
+});
+
+function showWhowins(){
+  if(yourPoints===3){
+
+    whoWins.innerHTML ="YOU WIN"
+  }
+  else{
+    whoWins.innerHTML ="YOU LOSE"
+  }
+}
+
 function roundCheck() {
   if (yourPoints === 3 || computerPoints === 3) {
     gamenotFinish = false;
+    gameOver.style.display = "block";
+    showWhowins()
   }
 }
 
@@ -41,13 +87,44 @@ function showOutput() {
   }
 }
 
+function condtionalScore() {
+  if (
+    (playerSelection === choice[0] && computerSelection === choice[1]) ||
+    (playerSelection === choice[1] && computerSelection === choice[2]) ||
+    (playerSelection === choice[2] && computerSelection === choice[0])
+  ) {
+    computerScore.innerHTML += `<img src="./imgs/starOutline.png" alt="" class="score" />`;
+    console.log("You lose");
+    computerPoints++;
+    roundCheck();
+    computerCtr++;
+  } else if (playerSelection === computerSelection) {
+    console.log("Tie");
+  } else {
+    yourScore.innerHTML += `<img src="./imgs/starOutline.png" alt="" class="score" />`;
+    console.log("You win");
+    yourPoints++;
+    roundCheck();
+    yourCtr++;
+  }
+}
+
+function gameRound() {
+  condtionalScore();
+  roundgameCounter.innerHTML = `Round ${roundCounter}`;
+  roundCounter++;
+}
+
 buttonRock.addEventListener("click", () => {
-  roundCheck();
+  // roundCheck();
   if (gamenotFinish) {
     playerSelection = choice[0]; //rock
     getComputerChoice();
     gameRound();
     showOutput();
+    roundCheck();
+  } else {
+    roundCheck();
   }
 });
 
@@ -74,28 +151,6 @@ buttonScissors.addEventListener("click", () => {
 function getComputerChoice() {
   computerSelection = choice[Math.floor(Math.random() * 3)];
   return computerSelection;
-}
-
-function gameRound() {
-  if (
-    (playerSelection === choice[0] && computerSelection === choice[1]) ||
-    (playerSelection === choice[1] && computerSelection === choice[2]) ||
-    (playerSelection === choice[2] && computerSelection === choice[0])
-  ) {
-    computerScore.innerHTML += `<img src="./imgs/starOutline.png" alt="" class="score" />`;
-    console.log("You lose");
-    computerPoints++;
-    computerCtr++;
-  } else if (playerSelection === computerSelection) {
-    console.log("Tie");
-  } else {
-    yourScore.innerHTML += `<img src="./imgs/starOutline.png" alt="" class="score" />`;
-    console.log("You win");
-    yourPoints++;
-    yourCtr++;
-  }
-  roundgameCounter.innerHTML = `Round ${roundCounter}`;
-  roundCounter++;
 }
 
 /* pseudocode

@@ -1,95 +1,172 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
-html{
-    background-color: #397367;
-    padding: 5% 20%;
-    font-family: 'Open Sans', sans-serif;
-    color: #fff;
+html {
+  background-color: #397367;
+  padding: 5% 20%;
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
 }
 
-.GameTitle{
-    font-weight: 800;
-    font-size: 38px;
-    text-align: center;
+button{
+  cursor: pointer;
 }
 
-.round{
-    text-align: center;
-    font-weight: 700;
-    font-size: 29px;
+.gameMenu {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 15%; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-.scoreDiv{
-    display:flex;
-    justify-content: center;
-    margin-bottom: 14px;
-    height:61px;
+.gameOver {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 15%; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-.score{
-    height: 50px;
-    width: 50px;
-    margin: 5.5px;
+.gamemenuContent {
+  background-color: #397367;
+  margin: auto;
+  padding: 20px;
+  width: 30%;
+  height: 40%;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.OutputDiv{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* margin-top: 10px; */
-    margin-bottom: 25px;;
+.play {
+  margin-top: 23px;
+  background-color: #63ccca;
+  border: none;
+  border-radius: 24px;
+  width: 250px;
+  height: 54px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  font-size: 38px;
+  color: #fff;
+
 }
 
-.Output{
-    background-color: #63CCCA;
-    width: 250px;
-    min-width: 214px;
-    height: 250px;
-    border-radius: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    font-weight: 800;
-    font-size: 38px;
-    padding: 15px 18px;
+.ok {
+  margin-top: 23px;
+  background-color: #63ccca;
+  border: none;
+  border-radius: 24px;
+  width: 250px;
+  height: 54px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  font-size: 38px;
+  color: #fff;
+
 }
 
-.vs{
-    margin: 0 5%;
-    font-weight: 800;
-    font-size: 38px;
-    position: relative;
-    top: 25px
+#gameOver {
+  font-weight: 800;
+  font-size: 50px;
+  text-align: center;
 }
 
-.input{
-    text-align: center;
-    font-weight: 700;
-    font-size: 29px;
+.GameTitle {
+  font-weight: 800;
+  font-size: 38px;
+  text-align: center;
 }
 
-.choice{
-    margin-top: 16px;
-    display: flex;
-    justify-content: center;
+.round {
+  text-align: center;
+  font-weight: 700;
+  font-size: 29px;
 }
 
-.hand{
-    background-color: #63CCCA;
-    border: none;
-    border-radius: 24px;
-    width: 95px;
-    height: 95px;
-    margin: 0 10px;
-    cursor: pointer;
+.scoreDiv {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+  height: 61px;
 }
 
-img{
-    width: 75px;
+.score {
+  height: 50px;
+  width: 50px;
+  margin: 5.5px;
 }
 
-.imgOutput{
-    width: 150px;
-    margin-bottom: 25px;
+.OutputDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 10px; */
+  margin-bottom: 25px;
+}
+
+.Output {
+  background-color: #63ccca;
+  width: 250px;
+  min-width: 214px;
+  height: 250px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 800;
+  font-size: 38px;
+  padding: 15px 18px;
+}
+
+.vs {
+  margin: 0 5%;
+  font-weight: 800;
+  font-size: 38px;
+  position: relative;
+  top: 25px;
+}
+
+.input {
+  text-align: center;
+  font-weight: 700;
+  font-size: 29px;
+}
+
+.choice {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.hand {
+  background-color: #63ccca;
+  border: none;
+  border-radius: 24px;
+  width: 95px;
+  height: 95px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+img {
+  width: 75px;
+}
+
+.imgOutput {
+  width: 150px;
+  margin-bottom: 25px;
 }
