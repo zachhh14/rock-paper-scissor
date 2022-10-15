@@ -7,14 +7,14 @@ html {
   color: #fff;
 }
 
-button{
+button {
   cursor: pointer;
 }
 
 .gameMenu {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 15%; /* Location of the box */
+  padding-top: 13%; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -27,7 +27,7 @@ button{
 .gameOver {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 15%; /* Location of the box */
+  padding-top: 13%; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -61,7 +61,6 @@ button{
   font-weight: 800;
   font-size: 38px;
   color: #fff;
-
 }
 
 .ok {
@@ -75,7 +74,6 @@ button{
   font-weight: 800;
   font-size: 38px;
   color: #fff;
-
 }
 
 #gameOver {
@@ -113,7 +111,6 @@ button{
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-top: 10px; */
   margin-bottom: 25px;
 }
 
@@ -169,4 +166,18 @@ img {
 .imgOutput {
   width: 150px;
   margin-bottom: 25px;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  bottom: 5px;
+  right: 50px;
+}
+
+.logoLink{
+  width: 35px;
+  margin: 5px;
 }
