@@ -11,7 +11,7 @@ const gamemenuModal = document.querySelector(".gameMenu");
 const gameOver = document.querySelector(".gameOver");
 const play = document.querySelector(".play");
 const ok = document.querySelector(".ok");
-const whoWins = document.querySelector("#gameOver")
+const whoWins = document.querySelector("#gameOver");
 let yourPoints = 0;
 let computerPoints = 0;
 let playerSelection;
@@ -29,34 +29,31 @@ function reset() {
   roundCounter = 1;
   yourPoints = 0;
   computerPoints = 0;
-  gamenotFinish=true;
-  playerSelection = "null"
-  computerSelection = "null"
-  gameRound()
-  outputPlayer.innerHTML = ""
-  outputComputer.innerHTML = ""
-  computerScore.innerHTML =""
-  yourScore.innerHTML =""
-
+  gamenotFinish = true;
+  playerSelection = "null";
+  computerSelection = "null";
+  gameRound();
+  outputPlayer.innerHTML = "";
+  outputComputer.innerHTML = "";
+  computerScore.innerHTML = "";
+  yourScore.innerHTML = "";
 }
 
 ok.addEventListener("click", () => {
   gameOver.style.display = "none";
   gamemenuModal.style.display = "block";
-  reset()
+  reset();
 });
 
 play.addEventListener("click", () => {
   gamemenuModal.style.display = "none";
 });
 
-function showWhowins(){
-  if(yourPoints===3){
-
-    whoWins.innerHTML ="YOU WIN"
-  }
-  else{
-    whoWins.innerHTML ="YOU LOSE"
+function showWhowins() {
+  if (yourPoints === 3) {
+    whoWins.innerHTML = "YOU WIN";
+  } else {
+    whoWins.innerHTML = "YOU LOSE";
   }
 }
 
@@ -64,7 +61,7 @@ function roundCheck() {
   if (yourPoints === 3 || computerPoints === 3) {
     gamenotFinish = false;
     gameOver.style.display = "block";
-    showWhowins()
+    showWhowins();
   }
 }
 
